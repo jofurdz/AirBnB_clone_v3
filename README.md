@@ -151,7 +151,7 @@ EOF  all  create  destroy  help  quit  show  update
 ```
 
 ## Bugs
-No known bugs at this time. 
+Currently no known bugs at this time.
 
 ## Authors
 Rocko Gilbert - [Github](https://github.com/RockoGilbert?tab=repositories)
