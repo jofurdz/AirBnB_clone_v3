@@ -76,3 +76,4 @@ def amenities(amenity_id):
         return create_amenity(request), 201
     elif (request.method == "PUT"):
         return update_amenity(amenity_id, request), 200
+
