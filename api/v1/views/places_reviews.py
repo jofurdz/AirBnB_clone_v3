@@ -4,13 +4,14 @@
 from flask import jsonify, request, abort
 from models import storage
 from models.review import Review
-from models.user import User
 from models.place import Place
+from api.v1.views import app_views
 
 
 @app_views.route('/places/<places_id>/reviews', methods=['GET'],
                  strict_slashes=False)
 def place_review(place_id):
+    """gets place IDs"""
     place = storage.get(Place, place_id)
     if place is None:
         abort(404)
@@ -50,6 +51,7 @@ def get_review(review_id):
 @app_views.route('places/<place_id>/reviews', methods=['POST'],
                  strict_slashes=False)
 def post_review(place_id):
+    """posts review for place"""
     place = storage.get(Place, place_id)
     review_info = request.get_json()
     if not place:
