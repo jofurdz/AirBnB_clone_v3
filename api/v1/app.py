@@ -21,7 +21,7 @@ def teardown_appcontext(error):
 
 @app.errorhandler(404)
 def page_404(error):
-    """ Return a custom 404 error """
+    """ Returns a custom 404 error """
     err_dict = {"error": "Not found"}
     return jsonify(err_dict), 404
 
