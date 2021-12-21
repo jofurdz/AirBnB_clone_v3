@@ -65,7 +65,8 @@ def update_amenity(amenity_id, request):
     return jsonify(get_amenity.to_dict())
 
 
-@app_views.route('/amenities/<amenity_id>', methods=['GET', 'DELETE', 'PUT'], strict_slashes=False)
+@app_views.route('/amenities/<amenity_id>', methods=['GET', 'DELETE', 'PUT'],
+                 strict_slashes=False)
 def amenities(amenity_id):
     """Handle amenities requests"""
     if (request.method == "GET"):
@@ -76,4 +77,3 @@ def amenities(amenity_id):
         return create_amenity(request), 201
     elif (request.method == "PUT"):
         return update_amenity(amenity_id, request), 200
-
