@@ -70,6 +70,8 @@ class FileStorage:
         self.reload()
 
     def get(self, cls, id):
+        if type(cls) != str:
+            cls = cls.name
         return self.all(cls).get("{}.{}".format(cls, id))
 
     def count(self, cls=None):
